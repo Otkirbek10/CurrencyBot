@@ -131,7 +131,6 @@ async def uzs(call:types.CallbackQuery,state:FSMContext):
     callback_data = call.data
     logging.info(f"{callback_data=}")
     logging.info(f"{call.from_user.username=}")
-
     await state.update_data(
         {'to_cur':callback_data}
     )
@@ -253,7 +252,7 @@ async def kz(call:types.CallbackQuery,state:FSMContext):
 
 @dp.callback_query_handler(text_contains="bak", state=Swop.to_cur)
 async def from_to(call: types.CallbackQuery):
-    await call.answer(cache_time=60)
+    await call.answer(cache_time=20)
     callback_data = call.data
     logging.info(f"{callback_data=}")
     logging.info(f"{call.from_user.username=}")
@@ -263,7 +262,7 @@ async def from_to(call: types.CallbackQuery):
 
 @dp.callback_query_handler(text_contains="bak", state=Swop.amount)
 async def from_to(call: types.CallbackQuery):
-    await call.answer(cache_time=60)
+    await call.answer(cache_time=20)
     callback_data = call.data
     logging.info(f"{callback_data=}")
     logging.info(f"{call.from_user.username=}")
