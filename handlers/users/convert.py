@@ -12,18 +12,20 @@ from data.cont import convert_cur
 async def amount(message:types.Message,state:FSMContext):
     try:   
         x = float(message.text)
-        data = await state.get_data()
-        from_cur = data.get('from_cur')
-        to_cur = data.get('to_cur')
-        res = convert_cur(from_cur, to_cur, amount=x)
-        msg = f"♻️Aylantirildi: {x} {from_cur} ➡️ {res['res']} {to_cur}"
-        await message.answer(msg,reply_markup=bak)
+        if x >= 1:
+            data = await state.get_data()
+            from_cur = data.get('from_cur')
+            to_cur = data.get('to_cur')
+            res = convert_cur(from_cur, to_cur, amount=x)
+            msg = f"♻️Aylantirildi: {x} {from_cur} ➡️ {res['res']} {to_cur}"
+            await message.answer(msg,reply_markup=bak)
+        else:
+            await message.answer('Faqat 1 yoki 1.1 tarzida kiriting!')
     except ValueError:
         await message.answer('Faqat 1 yoki 1.1 tarzida kiriting!')
 
 @dp.callback_query_handler(text_contains="back",state=Swop.amount)
 async def from_to(call: types.CallbackQuery):
-    await call.answer(cache_time=20)
     callback_data = call.data
     logging.info(f"{callback_data=}")
     logging.info(f"{call.from_user.username=}")

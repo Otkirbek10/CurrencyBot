@@ -31,3 +31,15 @@ msg_try = f"{res_try['conversion_rate']}"
 url_kzt = f"https://v6.exchangerate-api.com/v6/462078e42ed014b981331528/pair/KZT/UZS/"
 res_kzt = requests.get(url_kzt).json()
 msg_kzt = f"{res_kzt['conversion_rate']}"
+
+url_jpy = f"https://v6.exchangerate-api.com/v6/462078e42ed014b981331528/pair/JPY/UZS/"
+res_jpy = requests.get(url_jpy).json()
+msg_jpy = f"{res_jpy['conversion_rate']}"
+
+url_irr = f"https://v6.exchangerate-api.com/v6/462078e42ed014b981331528/pair/IRR/UZS/"
+res_irr = requests.get(url_irr).json()
+msg_irr = f"{res_irr['conversion_rate']}"
+
+url_aed = f"https://v6.exchangerate-api.com/v6/462078e42ed014b981331528/pair/AED/UZS/"
+res_aed = requests.get(url_aed).json()
+msg_aed = f"{res_aed['conversion_rate']}"
