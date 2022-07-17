@@ -14,7 +14,8 @@ async def converter_cur(call: types.CallbackQuery):
     callback_data = call.data
     logging.info(f"{callback_data=}")
     logging.info(f"{call.from_user.username=}")
-    await call.message.edit_text("<b>🔄Qaysi valyutani ayirboshlamoqchisiz?</b>", reply_markup=currency)
+    await call.message.delete()
+    await call.message.answer("<b>🔄Qaysi valyutani ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.from_cur.set()
 
 @dp.callback_query_handler(text_contains='UZS',state=Swop.from_cur)
@@ -370,8 +371,9 @@ async def kz(call:types.CallbackQuery,state:FSMContext):
     logging.info(f"{callback_data=}")
     logging.info(f"{call.from_user.username=}")
     await call.message.delete()
-    await call.message.answer(f"🇺🇸 1 AQSH dollari (USD) - {msg_usd} so'm\n🇷🇺 1 Rossiya rubli (RUB) - {msg_rub} so'm\n🇨🇳 Xitoy yuani (CNY) - {msg_cny} so'm\n🇪🇺 1 Yevro (EUR) - {msg_eur} so'm\n🇬🇧 1 Angliya funt sterlingi (GBP) - {msg_gbp} so'm\n🇰🇷 1 Koreya respublikasi voni (KRW) - {msg_krw} so'mi\n🇹🇷 1 Turkiya lirasi (TRY) - {msg_try} so'm\n🇰🇿 1 Qozog‘iston tengesi (KZT) -  {msg_kzt} so'm",reply_markup=exchenge)
+    await call.message.answer(f"🇺🇸 1 AQSH dollari (USD) - {msg_usd} so'm\n🇷🇺 1 Rossiya rubli (RUB) - {msg_rub} so'm\n🇨🇳 1 Xitoy yuani (CNY) - {msg_cny} so'm\n🇪🇺 1 Yevro (EUR) - {msg_eur} so'm\n🇬🇧 1 Angliya funt sterlingi (GBP) - {msg_gbp} so'm\n🇯🇵 1 Yaponiya iyenasi (JPY) - {msg_jpy} so'm\n🇮🇷 1 Eron riali (IRR) - {msg_irr} so'm\n🇦🇪 1 BAA dirhami (AED) - {msg_aed} so'm\n🇰🇷 1 Koreya respublikasi voni (KRW) - {msg_krw} so'm\n🇹🇷 1 Turkiya lirasi (TRY) - {msg_try} so'm\n🇰🇿 1 Qozog‘iston tengesi (KZT) -  {msg_kzt} so'm",reply_markup=exchenge)
     await state.finish()
+
 
 
 @dp.callback_query_handler(text_contains="bak", state=Swop.to_cur)
