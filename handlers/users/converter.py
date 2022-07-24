@@ -26,7 +26,7 @@ async def uzs(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
        {"from_cur": callback_data},
     )
-    await call.message.edit_text("<i>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</i>", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
     
 
@@ -39,7 +39,7 @@ async def rus(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
 
 @dp.callback_query_handler(text_contains='USD',state=Swop.from_cur)
@@ -50,7 +50,7 @@ async def usa(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()  
 
 @dp.callback_query_handler(text_contains='EUR',state=Swop.from_cur)
@@ -61,7 +61,7 @@ async def usa(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
 
 @dp.callback_query_handler(text_contains='GBP',state=Swop.from_cur)
@@ -72,7 +72,7 @@ async def uk(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
 
 @dp.callback_query_handler(text_contains='JPY',state=Swop.from_cur)
@@ -83,7 +83,7 @@ async def uk(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
 
 @dp.callback_query_handler(text_contains='IRR',state=Swop.from_cur)
@@ -94,7 +94,7 @@ async def uk(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
 
 @dp.callback_query_handler(text_contains='AED',state=Swop.from_cur)
@@ -105,7 +105,7 @@ async def uk(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
 
 @dp.callback_query_handler(text_contains='CNY',state=Swop.from_cur)
@@ -116,7 +116,7 @@ async def yuan(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
 
 @dp.callback_query_handler(text_contains='KRW',state=Swop.from_cur)
@@ -127,7 +127,7 @@ async def won(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
 
 @dp.callback_query_handler(text_contains='TRY',state=Swop.from_cur)
@@ -138,7 +138,7 @@ async def tr(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
 
 @dp.callback_query_handler(text_contains='KZT',state=Swop.from_cur)
@@ -149,7 +149,7 @@ async def tr(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
         {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
 
 @dp.callback_query_handler(text_contains='UZS',state=Swop.to_cur)
