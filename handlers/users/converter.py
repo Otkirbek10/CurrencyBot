@@ -26,7 +26,7 @@ async def uzs(call:types.CallbackQuery,state:FSMContext):
     await state.update_data(
        {"from_cur": callback_data},
     )
-    await call.message.edit_text("🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?", reply_markup=currency)
+    await call.message.edit_text("<b>🔄Tanlagan valyutangizni qaysi valyuta bilan ayirboshlamoqchisiz?</b>", reply_markup=currency)
     await Swop.next()
     
 
